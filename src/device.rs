@@ -9,8 +9,8 @@ use device_descriptor::{self, DeviceDescriptor};
 use config_descriptor::{self, ConfigDescriptor};
 use fields::{self, Speed};
 
-
 /// A reference to a USB device.
+#[derive(Clone)]
 pub struct Device<'a> {
     context: PhantomData<&'a Context>,
     device: *mut libusb_device,
